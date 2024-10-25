@@ -5,12 +5,12 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        {/* Aquí están las señales de tráfico que llevan a las páginas */}
+        {/* define Links on this pages*/}
         <Link to="/inicio">Inicio</Link> | 
         <Link to="/sobre">Sobre</Link>
       </nav>
       
-      {/* Aquí están los caminos que te llevan a cada página */}
+      {/* define Links on this pages*/}
       <Route path="/inicio" component={Inicio} />
       <Route path="/sobre" component={Sobre} />
     </BrowserRouter>
@@ -22,8 +22,32 @@ function Inicio() {
 }
 
 function Sobre() {
-  return <h1>Acerca de nosotros</h1>;
+  return <h1 className="titulo animacion-color">Acerca de nosotros</h1>;
 }
+function App() {
+  return (
+    <Router>
+      <div>
+        <nav className="navegacion">
+          <ul>
+            <li>
+              <Link to="/inicio" className="link">Inicio</Link>
+            </li>
+            <li>
+              <Link to="/sobre" className="link">Sobre</Link>
+            </li>
+          </ul>
+        </nav>
 
+        <div className="contenido">
+          <Routes>
+            <Route path="/inicio" element={<Inicio />} />
+            <Route path="/sobre" element={<Sobre />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+}
 export default App;
 

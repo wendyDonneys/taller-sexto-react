@@ -1,20 +1,20 @@
-// Button.test.js
+// define functions Button.test.js
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Button from './Button';
 
 test('El botón muestra el texto inicial y cambia al hacer clic', () => {
-  // Renderizamos el componente
+  // We render the component//
   const { getByText } = render(<Button/>);
 
-  // Verificamos que el texto inicial es "Hacer clic aquí"
+  //check that the initial text is 'Click here'//
   const button = getByText('Hacer clic aquí');
   expect(button).toBeInTheDocument(); 
 
-  // Simulamos un clic en el botón
+  // simulate a click on the button//
   fireEvent.click(button);
 
-  // Verificamos que el texto cambió a "¡Gracias por hacer clic!"
+  //verify that the text changed to 'Thank you for clicking!'//
   const nuevoTexto = getByText('¡Gracias por hacer clic!');
   expect(nuevoTexto).toBeInTheDocument();
 });

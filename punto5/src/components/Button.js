@@ -1,7 +1,7 @@
-// Button.js
+// Import react, and define functions,return and export default of Button.js 
 import React, { useState } from 'react';
 
-const Button = () => {
+function Button () {
   const [texto, setTexto] = useState('Hacer clic aquí');
 
   return (

@@ -9,6 +9,10 @@ const handleClick = () => {
     alert ('boton cliclado! Contador: $ {count + 1}'); 
 }; 
 
+const resetContador = () => {
+    setContador(0);
+};
+
 return (
     <div className="counter-button">
         <button onClick={handleClick}>

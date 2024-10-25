@@ -1,3 +1,4 @@
+//define @testing-library/react, import App and define functions to test*
 import { render, screen } from '@testing-library/react';
 import App from './App';
 

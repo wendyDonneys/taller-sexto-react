@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'DynaPuff', cursive;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navegacion {
+  background-color: #333;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navegacion:hover {
+  background-color: #222;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navegacion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.navegacion ul li {
+  margin: 0 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navegacion ul li .link {
   color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.navegacion ul li .link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: -100%;
+  background-color: #ff6347;
+  transition: left 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navegacion ul li .link:hover::before {
+  left: 0;
+}
+
+.navegacion ul li .link:hover {
+  color: #ff6347;
+}
+
+.contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px;
+}
+
+/* Estilos para los títulos */
+.titulo {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  font-family: 'DynaPuff', cursive;
+}
+
+@keyframes cambio-color {
+  0% {
+    color: #333;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    color: #ff6347;
   }
+  100% {
+    color: #333;
+  }
+}
+
+.animacion-color {
+  animation: cambio-color 3s infinite;
 }
